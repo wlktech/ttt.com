@@ -2,7 +2,11 @@
   <ul class="navbar-nav">
     <li class="nav-item mb-2 mt-0">
       <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-white" aria-controls="ProfileNav" role="button" aria-expanded="false">
+        @if (Auth::user()->profile == null)
+          <i class="fas fa-user-circle fa-2x"></i>
+        @else
         <img src="{{ Auth::user()->profile }}" class="avatar">
+        @endif
         <span class="nav-link-text ms-2 ps-1">{{ Auth::user()->name }}</span>
       </a>
       <div class="collapse" id="ProfileNav">

@@ -3,12 +3,11 @@
 <div class="row">
     <div
       class="col-lg-4 col-md-4 offset-lg-4 offset-md-4 mt-4 py-4 headers"
-      style="height: 120vh;"
     >
     <div class="d-flex justify-content-between py-4 headercontent">
         @guest
-        <i class="fa-regular fa-circle-user fa-4x text-white"></i>
-        <div class="d-flex flex-sm-column flex-md-row">
+        <i class="fa-regular fa-circle-user fa-4x text-white pt-3"></i>
+        <div class="d-flex flex-sm-column flex-md-row pt-2">
             <span class="mt-4"><a href="{{ url('/login') }}" class="text-decoration-none text-white" style="border:1px solid #ebc03c; font-size: 15px">အကောင့်ဝင်ပါ</a></span>
 
             {{-- <i class="fa-regular fa-circle-user fa-4x text-white"></i> --}}
@@ -18,7 +17,7 @@
 
         @endguest
         @auth
-        <div class="d-flex">
+        <div class="d-flex py-2">
             @if(Auth::user()->profile)
                 <img src="{{ Auth::user()->profile }}" width="60px" height="60px" class="rounded-circle" alt="">
             @else
@@ -60,45 +59,21 @@
     data-bs-ride="carousel"
     >
         <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img
-                src="{{ asset('user_app/assets/images/shwe_sin_1.jpg') }}"
-                style="max-height: 500px"
-                class="d-block w-100"
-                alt="..."
-            />
-            <div class="marquee">
-                <div class="marquee-text">
-                2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
+            @foreach ($banners as $banner)
+            <div class="carousel-item {{ $banners[0]->id == $banner->id ? 'active' : '' }}">
+                <img
+                    src="{{ $banner->img_url }}"
+                    style="max-height: 500px"
+                    class="d-block w-100"
+                    alt="..."
+                />
+                <div class="marquee">
+                    <div class="marquee-text">
+                    2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
+                    </div>
                 </div>
             </div>
-            </div>
-            <div class="carousel-item">
-            <img
-                src="{{ asset('user_app/assets/images/shwe_sin_2.jpg') }}"
-                style="max-height: 500px"
-                class="d-block w-100"
-                alt="..."
-            />
-            <div class="marquee">
-                <div class="marquee-text">
-                2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
-                </div>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <img
-                src="{{ asset('user_app/assets/images/shwe_sin_2.jpg') }}"
-                style="max-height: 500px"
-                class="d-block w-100"
-                alt="..."
-            />
-            <div class="marquee">
-                <div class="marquee-text">
-               2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
-                </div>
-            </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -117,49 +92,49 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-around mt-4">
-        <div>
-            <div class="button">
-            <a href="#"
-                ><img
-                class="w-100 buttons-img"
-                src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw"
-                alt=""
-            /></a>
+        {{-- <div class="d-flex justify-content-around mt-4">
+            <div>
+                <div class="button">
+                <a href="#"
+                    ><img
+                    class="w-100 buttons-img"
+                    src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw"
+                    alt=""
+                /></a>
+                </div>
+
             </div>
+            <div>
+                <div class="button">
+                <a href="#"
+                    ><img class="buttons-img" src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw" alt=""
+                /></a>
+                </div>
 
-        </div>
-        <div>
-            <div class="button">
-            <a href="#"
-                ><img class="buttons-img" src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw" alt=""
-            /></a>
             </div>
+        </div> --}}
 
-        </div>
-        </div>
+        {{-- <div class="d-flex justify-content-around mt-4">
+            <div>
+                <div class="button">
+                <a href="#"
+                    ><img
+                    class="w-100 buttons-img"
+                    src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw"
+                    alt=""
+                /></a>
+                </div>
 
-        <div class="d-flex justify-content-around mt-4">
-        <div>
-            <div class="button">
-            <a href="#"
-                ><img
-                class="w-100 buttons-img"
-                src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw"
-                alt=""
-            /></a>
             </div>
+            <div>
+                <div class="button">
+                <a href="#"
+                    ><img class="buttons-img" src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw" alt=""
+                /></a>
+                </div>
 
-        </div>
-        <div>
-            <div class="button">
-            <a href="#"
-                ><img class="buttons-img" src="https://play-lh.googleusercontent.com/_8W1DzUsigdywIFKmm8sYIuJN6cHjzg7SOMhHC6T5MHaMl40h66ru_lAABR7eCCCKQ=w526-h296-rw" alt=""
-            /></a>
             </div>
-
-        </div>
-        </div>
+        </div> --}}
       </div>
 
         <!-- carousel -->

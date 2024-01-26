@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shwe Sin 2D|3D</title>
+    <title>TTT 2D|3D</title>
     <link rel="stylesheet" href="{{ asset('user_app/assets/css/style.css') }}" />
     <!-- Bootstrap 5 CSS -->
     <link
@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="icon" href="{{ asset('user_app/assets/images/shwe_sin_logo.jpg') }}">
+    <link rel="icon" href="{{ asset('assets/img/logo_black.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&family=Inter&family=Poppins:wght@300;400;500&family=Rubik+Mono+One&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
     <!-- font awesome  -->
     <script src="https://kit.fontawesome.com/b829c5162c.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body style="max-height: 100vh;">
     <div class="container-fluid">
        <!-- nav section -->
         <div class="row">
